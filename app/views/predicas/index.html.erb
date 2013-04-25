@@ -1,0 +1,27 @@
+<h1>Mostrando predicas</h1>
+
+<table>
+  <tr>
+    <th>Título</th>
+    <th>Mensaje</th>
+    <th>Autor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @predicas.each do |predica| %>
+  <tr>
+    <td><%= predica.titulo %></td>
+    <td><%= predica.mensaje %></td>
+    <td><%= predica.autor %></td>
+    <td><%= link_to 'Ver', predica %></td>
+    <td><%= link_to 'Editar', edit_predica_path(predica) %></td>
+    <td><%= link_to 'Eliminar', predica, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Predica', new_predica_path %>

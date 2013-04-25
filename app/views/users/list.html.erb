@@ -1,0 +1,19 @@
+<h1>Usuarios registrados</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>password</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.password_digest %></td>
+
+      </tr>
+  <% end %>
+</table>

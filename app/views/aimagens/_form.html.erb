@@ -1,0 +1,25 @@
+<%= form_for(@aimagen) do |f| %>
+  <% if @aimagen.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aimagen.errors.count, "error") %> prohibited this aimagen from being saved:</h2>
+
+      <ul>
+      <% @aimagen.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dirección %><br />
+    <%= f.text_field :direccion, :placeholder=>"dirección", :autofocus=>"true", :required=>"true" %>
+  </div>
+  <div class="field">
+    <%= f.label :galería %><br />
+    <%= f.number_field :galeria %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

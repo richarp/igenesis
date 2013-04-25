@@ -1,0 +1,19 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user_email{
+  vertical-align: bottom;
+  background: #ffffff url(iconos/user.png) no-repeat;
+  background-position: left;
+}
+#user_password{
+  vertical-align: bottom;
+  background: #ffffff url(iconos/add_link.png) no-repeat;
+  background-position: left;
+}
+#user_password_confirmation{
+  vertical-align: bottom;
+  background: #ffffff url(iconos/add_link.png) no-repeat;
+  background-position: left;
+}

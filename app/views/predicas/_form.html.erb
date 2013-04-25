@@ -1,0 +1,29 @@
+<%= form_for(@predica) do |f| %>
+  <% if @predica.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@predica.errors.count, "error") %> prohibited this predica from being saved:</h2>
+
+      <ul>
+      <% @predica.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :título %><br />
+    <%= f.text_field :titulo, :placeholder=>"título", :autofocus=>"true", :required=>"true" %>
+  </div>
+  <div class="field">
+    <%= f.label :mensaje %><br />
+    <%= f.text_area :mensaje, :placeholder=>"mensaje", :required=>"true", :rows=>"4" %>
+  </div>
+  <div class="field">
+    <%= f.label :autor %><br />
+    <%= f.text_field :autor %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

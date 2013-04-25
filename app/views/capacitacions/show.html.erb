@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @capacitacion.nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @capacitacion.descripcion %>
+</p>
+
+<p>
+  <b>Fechainicio:</b>
+  <%= @capacitacion.fechainicio %>
+</p>
+
+<p>
+  <b>Fechafinal:</b>
+  <%= @capacitacion.fechafinal %>
+</p>
+
+
+<%= link_to 'Edit', edit_capacitacion_path(@capacitacion) %> |
+<%= link_to 'Back', capacitacions_path %>

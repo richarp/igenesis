@@ -1,0 +1,25 @@
+<h1>Mostrando imagenes</h1>
+
+<table>
+  <tr>
+    <th>Dirección</th>
+    <th>Galería</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @aimagens.each do |aimagen| %>
+  <tr>
+    <td><%= aimagen.direccion %></td>
+    <td><%= aimagen.galeria %></td>
+    <td><%= link_to 'Ver', aimagen %></td>
+    <td><%= link_to 'Editar', edit_aimagen_path(aimagen) %></td>
+    <td><%= link_to 'Eliminar', aimagen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva imagen', new_aimagen_path %>

@@ -1,0 +1,24 @@
+// Place all the styles related to the contactos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#contacto_nombre{
+  vertical-align: bottom;
+  background: #ffffff url(iconos/user.png) no-repeat;
+  background-position: left;
+}
+#contacto_asunto{
+  vertical-align: bottom;
+  background: #ffffff url(iconos/outline.png) no-repeat;
+  background-position: left;
+}
+#contacto_mensaje{
+  vertical-align: bottom;
+  background: #ffffff url(iconos/comments.png) no-repeat;
+  background-position: left;
+}
+#contacto_email{
+  vertical-align: bottom;
+  background: #ffffff url(iconos/new_post.png) no-repeat;
+  background-position: left;
+}

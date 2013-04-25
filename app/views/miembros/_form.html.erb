@@ -1,0 +1,33 @@
+<%= form_for(@miembro) do |f| %>
+  <% if @miembro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@miembro.errors.count, "error") %> prohibited this miembro from being saved:</h2>
+
+      <ul>
+      <% @miembro.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombres %><br />
+    <%= f.text_field :nombre, :required => "true", :placeholder=>"Sus nombres", :autofocus=>"true", :title=>"Nombres" %>
+  </div>
+  <div class="field">
+    <%= f.label :apellidos %><br />
+    <%= f.text_field :apellido, :required=> "true", :placeholder=>"Sus Apellidos", :title=>"Apellidos" %>
+  </div>
+    <div class="field">
+      <%= f.label :sexo %><br />
+      <%= f.select(:sexo, [['Seleccione', ''], ['FEMENINO', 'F'], ['MASCULINO', 'M']]) %>
+    </div>
+  <div class="field">
+    <%= f.label :fecha_de_nacimiento %><br />
+    <%= f.date_select :fechanac , :start_year => 1950, :end_year => 2005, :order => [:day, :month, :year] , :title=>"Seleccione su fecha de nacimiento"%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @pastor.nombre %>
+</p>
+
+<p>
+  <b>Apellidos:</b>
+  <%= @pastor.apellidos %>
+</p>
+
+
+<%= link_to 'Editar', edit_pastor_path(@pastor) %> |
+<%= link_to 'Atrás', pastors_path %>

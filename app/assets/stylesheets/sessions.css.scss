@@ -1,0 +1,15 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#email{
+  vertical-align: bottom;
+  background: #ffffff url(iconos/user.png) no-repeat;
+  background-position: left;
+}
+
+#password{
+  vertical-align: bottom;
+  background: #ffffff url(iconos/add_link.png) no-repeat;
+  background-position: left;
+}

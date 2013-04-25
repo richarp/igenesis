@@ -1,0 +1,96 @@
+<style type="text/css">
+
+
+
+    #slider p a {
+        text-decoration: none;
+
+        padding: 1px 1px;
+        color: #222;
+
+    }
+    #slider p {
+        width: 249px;
+        background-color: #ffffff;
+        margin:5px 0px 15px 0px;
+        display: inline-block;
+        color: #ff0000;
+
+    }
+
+    #slider p a img {
+
+        /*border: 2px  solid #fff4fd;
+          */
+        border-top: #fff3fb solid 2px;
+        border-left: #fff3fb solid 2px;
+        border-right: #fff3fc solid 2px;
+        border-bottom: #cfc5cc solid 50px;
+
+
+    }
+    #slider p  a img:hover {
+        -webkit-transform: scale(1.25);
+        -moz-transform: scale(1.25);
+
+    }
+</style>
+
+<div id="titulo">Galería de imágenes</div>
+<% directorio = File.join(Rails.root, 'app', 'assets/images/genesis').to_s %>
+<% @fotos = Dir.new(directorio).entries %>
+
+<% @fotos.delete(".") %>
+<% @fotos.delete("..") %>
+<% @fotos.delete("Thumbs.db") %>
+
+
+<div id="slider">
+
+  <% @fotos.each do |f| %>
+      <p>
+      <a href="#<%= "#{f}" %>">
+
+        <%= image_tag "genesis/"+f, :width => "245" %>
+      </a>
+
+      </p>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Fecha</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @galeria.each do |galerium| %>
+      <tr>
+        <td><%= galerium.nombre %></td>
+        <td><%= galerium.fecha %></td>
+        <td><%= link_to 'Show', galerium %></td>
+        <td><%= link_to 'Edit', edit_galerium_path(galerium) %></td>
+        <td><%= link_to 'Destroy', galerium, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br/>
+
+<%= link_to 'New Galerium', new_galerium_path %>

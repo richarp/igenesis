@@ -1,0 +1,27 @@
+<h1>Mostrando miembros</h1>
+
+<table>
+  <tr>
+    <th>Nombres</th>
+    <th>Apellidos</th>
+    <th>Fecha de Nacimiento</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @miembros.each do |miembro| %>
+  <tr>
+    <td><%= miembro.nombre %></td>
+    <td><%= miembro.apellido %></td>
+    <td><%= miembro.fechanac %></td>
+    <td><%= link_to 'Show', miembro %></td>
+    <td><%= link_to 'Edit', edit_miembro_path(miembro) %></td>
+    <td><%= link_to 'Destroy', miembro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Miembro', new_miembro_path %>

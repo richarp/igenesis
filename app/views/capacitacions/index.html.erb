@@ -1,0 +1,29 @@
+<h1>Listing capacitacions</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Fechainicio</th>
+    <th>Fechafinal</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @capacitacions.each do |capacitacion| %>
+  <tr>
+    <td><%= capacitacion.nombre %></td>
+    <td><%= capacitacion.descripcion %></td>
+    <td><%= capacitacion.fechainicio %></td>
+    <td><%= capacitacion.fechafinal %></td>
+    <td><%= link_to 'Show', capacitacion %></td>
+    <td><%= link_to 'Edit', edit_capacitacion_path(capacitacion) %></td>
+    <td><%= link_to 'Destroy', capacitacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Capacitacion', new_capacitacion_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  encargado: 1
+  mision: MyText
+  vision: MyText
+
+two:
+  nombre: MyString
+  encargado: 1
+  mision: MyText
+  vision: MyText

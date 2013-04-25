@@ -1,0 +1,124 @@
+<style type="text/css">
+
+    #images {
+        width: 400px;
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+        margin: 20px auto;
+        border: 10px solid #fff7f4;
+
+    }
+
+    #images img {
+
+        position: absolute;
+        top: 0;
+        left: -400px;
+        z-index: 1;
+        opacity: 0;
+        transition: all linear 500ms;
+        -o-transition: all linear 500ms;
+        -moz-transition: all linear 500ms;
+        -webkit-transition: all linear 500ms;
+    }
+
+    #images img:target {
+        left: 0;
+        z-index: 9;
+        opacity: 1;
+    }
+
+    #images img:first-child {
+        left: 0;
+        opacity: 1;
+    }
+
+    #slider a {
+        text-decoration: none;
+
+        padding: 1px 1px;
+        color: #222;
+    }
+
+    #slider a img {
+
+        border: 2px  solid #fff4fd;
+
+
+    }
+    #slider a img:hover {
+        -webkit-transform: scale(1.25);
+        -moz-transform: scale(1.25);
+    }
+</style>
+
+<div id="titulo">Galería de imágenes</div>
+<% directorio = File.join(Rails.root, 'app', 'assets/images/genesis').to_s %>
+<% @fotos = Dir.new(directorio).entries %>
+
+<% @fotos.delete(".") %>
+<% @fotos.delete("..") %>
+<% @fotos.delete("Thumbs.db") %>
+
+
+
+
+
+<div id="images">
+  <% @fotos.each do |f| %>
+
+      <%= image_tag "genesis/"+f, :width => "400", :id => f %>
+
+  <% end %>
+
+
+</div>
+<div id="slider">
+     <% a=1 %>
+  <% @fotos.each do |f| %>
+
+      <a href="#<%= "#{f}" %>">
+        <% a  %>
+        <%= image_tag "genesis/"+f, :width => "40" %>
+      </a>
+      <% a= a+1 %>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Fecha</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @galeria.each do |galerium| %>
+      <tr>
+        <td><%= galerium.nombre %></td>
+        <td><%= galerium.fecha %></td>
+        <td><%= link_to 'Show', galerium %></td>
+        <td><%= link_to 'Edit', edit_galerium_path(galerium) %></td>
+        <td><%= link_to 'Destroy', galerium, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br/>
+
+<%= link_to 'New Galerium', new_galerium_path %>

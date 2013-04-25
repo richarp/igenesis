@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  direccion: MyString
+  galeria: 1
+
+two:
+  direccion: MyString
+  galeria: 1

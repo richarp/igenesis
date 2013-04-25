@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="//si0.twimg.com/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <meta name="viewport" content="width=device-width , initial-scale=1 ,maximum-scale=1" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="predicas, biblia, programación, recursos, curso, jesus, Ruby, Rails, tecnologia" />
+  <meta name="description" content="Genesis: Asamblea Cristiana Génesis, Génesis ha crecido hasta convertirse en una competición centrada en encontrar soluciones a problemas reales. " />
+
+  <title><%= yield(:title) || 'Asamblea Cristiana Génesis' %></title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+
+  <%= csrf_meta_tags %>
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38346573-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script>
+<body>
+<header>
+
+  <div id="menu1">
+
+    <%= render "menu1" %>
+  </div>
+</header>
+</br>
+
+<div id="contenedorprincipal" class="classes">
+  <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+  <%= yield %>
+</div>
+
+
+</body>
+<footer>
+  <center>
+    <span class="copyright">Copyright &copy; 2013 <a href="https://iverlandth.herokuapp.com/" target="_blank">Departamendo de Sistemas y Métodos</a>, All Rights Reserved. Designed By <a href="https://twitter.com/iverlandth" target="_blank">@iverlandth</a></span>
+
+    <br>
+      <a href="/contactos/contactenos">Contactos</a>
+      | <a href="#">Terminos de uso</a>
+      | <a href="#">Privacidad</a>
+  </center>
+</footer>
+</html>

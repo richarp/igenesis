@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @ministerio.nombre %>
+</p>
+
+<p>
+  <b>Encargado:</b>
+  <%= @ministerio.encargado %>
+</p>
+
+<p>
+  <b>Mision:</b>
+  <%= @ministerio.mision %>
+</p>
+
+<p>
+  <b>Vision:</b>
+  <%= @ministerio.vision %>
+</p>
+
+
+<%= link_to 'Edit', edit_ministerio_path(@ministerio) %> |
+<%= link_to 'Back', ministerios_path %>

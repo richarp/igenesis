@@ -1,0 +1,13 @@
+// Place all the styles related to the reunion controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+     #reunion{
+       margin: auto;
+       font-size: 12px;
+       text-align: center;
+       text-shadow: 2px 2px 2px #303031;
+     }
+#reunion:hover{
+  color: #e6304d;
+  font-size: 20px;
+}

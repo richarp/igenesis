@@ -1,0 +1,76 @@
+<div id='cssmenu'>
+  <ul>
+    <li>
+      <%= link_to " Inicio ", :controller => "main", :action => "index" %>
+    </li>
+
+    <li class='has-sub'>
+      <a href='/genesis/index'><span>Genesis</span></a>
+      <ul>
+        <li class='has-sub '>
+          <a href='/reunion/index'><span>Reuniones</span></a>
+          <a href='/pastors/'><span>Pastores</span></a>
+
+          <a href='/ministerios/'><span>Ministerios</span></a>
+          <a href='/capacitacions/'><span>Capacitacion</span></a>
+          <a href='/proyectos/'><span>Proyectos</span></a>
+          <% if current_user %>
+              <% if  current_user.nivel == "Admin" %>
+                  <a href='/miembros/'><span>Miembros</span></a>
+                  <%=  link_to "Crear usuarios", :controller => :users, :action  => :new %>
+                  <%= link_to "Usuarios", :controller => :users , :action => :list %>
+            <% end %>
+        <% else %>
+        <% end %>
+
+        </li>
+      </ul>
+
+    </li>
+    <li>
+      <%= link_to " Prédicas ", :controller => "predicas", :action => "index" %>
+    </li>
+    <li class='has-sub'>
+      <a href='/galeria/'><span>Galeria de imágenes</span></a>
+      <!--
+      <ul>
+        <li class='has-sub '>
+          <a href='/aimagens/'><span>imágenes</span></a>
+
+        </li>
+      </ul>   -->
+
+    </li>
+    <li>
+      <%= link_to " Noticias ", :controller => "noticia", :action => "index" %>
+    </li>
+    <li>
+      <%= link_to " Próximos Eventos ", :controller => "eventos", :action => "index" %>
+    </li>
+    <% if current_user %>
+         <% if  current_user.nivel == "Admin" %>
+            <li>
+              <%= link_to " Contáctenos ", :controller => "contactos", :action => "index" %>
+            </li>
+            <% end %>
+    <% else %>
+
+        <li>
+          <%= link_to " Contáctenos ", :controller => "contactos", :action => "contactenos" %>
+        </li>
+    <% end %>
+
+
+    <%= render "fecha" %>
+    <div id="login">
+      <% if current_user %>
+          Sesión iniciada como: <%= current_user.email %>.<%= link_to "Cerrar sesión", logout_path %>
+
+      <% else %>
+          <%= link_to "Registrarse", signup_path %> o           <%= link_to "Iniciar sesión", login_path %>
+
+      <% end %>
+    </div>
+
+  </ul>
+</div>

@@ -1,0 +1,194 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    CONTENTS
+\*------------------------------------*/
+/*
+RESET
+SHARED
+MAIN
+CAROUSEL
+*/
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+    $SHARED
+\*------------------------------------*/
+h1,p,
+.carousel{
+    margin-bottom:24px;
+    margin-bottom:2rem;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+    $CAROUSEL
+\*------------------------------------*/
+.carousel{
+    overflow:hidden;
+    width: 300px;
+    height: 150px;
+    position:relative;
+}
+.panes{
+  /*  background: #b8b8b8;
+            */
+    list-style:none;
+    position:relative;
+    height:500%; /* Number of panes * 100% */
+    overflow:hidden; /* This is used solely to clear floats, it does not add functionality. */
+     
+    -webkit-animation:carousel 60s infinite;
+       -moz-animation:carousel 60s infinite;
+            animation:carousel 60s infinite;
+    -ms-animation:carousel 60s infinite
+}
+.panes > li{
+    position:relative;
+    float:left;
+    height:20%; /* 100 / number of panes */
+}
+.panes > li > a{
+    display:block;
+}
+.carousel img{
+    display:block;
+    width:100%;
+    max-width:100%;
+}
+.carousel h2{
+    font-family:"Segoe UI" ;
+    border-radius: 7px;
+    font-size:1em;
+    padding:0.5em;
+    position:absolute;
+    right:10px;
+
+    bottom:10px;
+    left:10px;
+    text-align:left;
+    color: #010d02;
+    /*background-color: rgba(28, 28, 28, 0.48);*/
+}
+.carousel p{
+    color: #010d02;
+    font-family:"Segoe UI" ;
+    font-size: 13px;
+    position: inherit;
+    padding: 10px;
+    top:10px;
+    
+}
+
+@-moz-keyframes carousel{
+      0%    { top:0; }
+    11%   { top:0; }
+    12.5% { top:-100%; }
+    23.5% { top:-100%; }
+    25%   { top:-200%; }
+    36%   { top:-200%; }
+    37.5% { top:-300%; }
+    48.5% { top:-300%; }
+    50%   { top:-400%; }
+    61%   { top:-400%; }
+    62.5% { top:-300%; }
+    73.5% { top:-300%; }
+    75%   { top:-200%; }
+    86%   { top:-200%; }
+    87.5% { top:-100%; }
+    98.5% { top:-100%; }
+    100%  { top:0; }
+}
+
+@-webkit-keyframes carousel{
+      0%    { top:0; }
+    11%   { top:0; }
+    12.5% { top:-100%; }
+    23.5% { top:-100%; }
+    25%   { top:-200%; }
+    36%   { top:-200%; }
+    37.5% { top:-300%; }
+    48.5% { top:-300%; }
+    50%   { top:-400%; }
+    61%   { top:-400%; }
+    62.5% { top:-300%; }
+    73.5% { top:-300%; }
+    75%   { top:-200%; }
+    86%   { top:-200%; }
+    87.5% { top:-100%; }
+    98.5% { top:-100%; }
+    100%  { top:0; }
+}
+
+@keyframes carousel{
+    0%    { top:0; }
+    11%   { top:0; }
+    12.5% { top:-100%; }
+    23.5% { top:-100%; }
+    25%   { top:-200%; }
+    36%   { top:-200%; }
+    37.5% { top:-300%; }
+    48.5% { top:-300%; }
+    50%   { top:-400%; }
+    61%   { top:-400%; }
+    62.5% { top:-300%; }
+    73.5% { top:-300%; }
+    75%   { top:-200%; }
+    86%   { top:-200%; }
+    87.5% { top:-100%; }
+    98.5% { top:-100%; }
+    100%  { top:0; }
+}
+
+#prueba{
+    margin: 0 auto;
+    height:40px;
+    width:1000px;
+    margin-top:10px;
+    /*box-shadow:0px 0px 10px #000;*/
+    border-radius:10px;
+    color: #b743ff;
+    font-size: 10pt;
+    text-align: center;
+
+}
+
+#prueba a{
+        color: red;
+}
+#prueba a:active{
+    color: orange;
+}
+
+#usuario{
+    font-family:"Segoe UI" ;
+    background: #1ecf39;
+    color: #04ACEC;
+    display:inline-block;
+    float: right;
+    position: relative;
+    margin-right: 10px;
+
+   /* margin-right: -760px;
+    */padding: 10px;
+
+    width: 180px;
+    font-size: 12px;
+    text-align:center ;
+
+}
+

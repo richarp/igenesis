@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Dirección:</b>
+  <%= @aimagen.direccion %>
+</p>
+
+<p>
+  <b>Galería:</b>
+  <%= @aimagen.galeria %>
+</p>
+
+
+<%= link_to 'Editar', edit_aimagen_path(@aimagen) %> |
+<%= link_to 'Atrás', aimagens_path %>

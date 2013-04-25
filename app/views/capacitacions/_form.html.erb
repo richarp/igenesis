@@ -1,0 +1,33 @@
+<%= form_for(@capacitacion) do |f| %>
+  <% if @capacitacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@capacitacion.errors.count, "error") %> prohibited this capacitacion from being saved:</h2>
+
+      <ul>
+      <% @capacitacion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :fechainicio %><br />
+    <%= f.date_select :fechainicio %>
+  </div>
+  <div class="field">
+    <%= f.label :fechafinal %><br />
+    <%= f.date_select :fechafinal %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

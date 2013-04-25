@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Título:</b>
+  <%= @predica.titulo %>
+</p>
+
+<p>
+  <b>Mensaje:</b>
+  <%= @predica.mensaje %>
+</p>
+
+<p>
+  <b>Autor:</b>
+  <%= @predica.autor %>
+</p>
+
+
+<%= link_to 'Editar', edit_predica_path(@predica) %> |
+<%= link_to 'Atrás', predicas_path %>
